@@ -27,11 +27,10 @@
             
             console.log("referer="+referer);
 
-            let domainUtama = "winvip.us";
-            if(referer.includes("winvip.us")){
-                console.log("dari winvip");
+            if(referer.includes("?qs=")){
+                console.log("Lanjut Refresh untuk hilangkan QS");
             }else{
-                console.log("bukan dari halaman yang di inginkan");
+                console.log("Setelah Redirect Dari QS");
             }
 
         });
