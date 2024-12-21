@@ -10,17 +10,22 @@
 <body>
     <script>
         $(document).ready(function(){            
-            let hostname = 'https://'+window.location.hostname+'/';
+            //let hostname = 'https://'+window.location.hostname+'/';
             let curUrl = window.location.href;
+            //let slug = curUrl.split(hostname)[1].split("/").join("").split("?").join("").split("=").join("");            
 
-            let slug = curUrl.split(hostname)[1].split("/").join("").split("?").join("").split("=").join("");
+            let arrQs   = curUrl.split('?qs=');
+            let linkArtikel = arrQs[0];
+            let linkUang = arrQs[1].split("wqslash").join("/").split("wqcolon").join(":").split("wqmark").join("?").split("wqdot").join(".").split("wqunder").join("_").split("wqequal").join("=");;
 
             let referer = document.referrer;
 
-            console.log(hostname);
             console.log(curUrl);
-            console.log(slug);
-            console.log(referer);
+            console.log(arrQs);
+            console.log(linkArtikel);
+            console.log(linkUang);
+            
+            console.log("referer="+referer);
 
             let domainUtama = "winvip.us";
             if(referer.includes("winvip.us")){
