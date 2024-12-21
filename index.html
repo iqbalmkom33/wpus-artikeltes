@@ -10,25 +10,22 @@
 <body>
     <script>
         $(document).ready(function(){            
-            //let hostname = 'https://'+window.location.hostname+'/';
-            let curUrl = window.location.href;
-            //let slug = curUrl.split(hostname)[1].split("/").join("").split("?").join("").split("=").join("");            
-
-            let arrQs   = curUrl.split('?qs=');
-            let linkArtikel = arrQs[0];
-            let linkUang = arrQs[1].split("wqslash").join("/").split("wqcolon").join(":").split("wqmark").join("?").split("wqdot").join(".").split("wqunder").join("_").split("wqequal").join("=");;
+            let curUrl = window.location.href;   
+            console.log(curUrl);
 
             let referer = document.referrer;
-
-            console.log(curUrl);
-            console.log(arrQs);
-            console.log(linkArtikel);
-            console.log(linkUang);
-            
             console.log("referer="+referer);
-
+            
             if(curUrl.includes("?qs=")){
                 //console.log("Lanjut Refresh untuk hilangkan QS");
+                let arrQs   = curUrl.split('?qs=');
+                let linkArtikel = arrQs[0];
+                let linkUang = arrQs[1].split("wqslash").join("/").split("wqcolon").join(":").split("wqmark").join("?").split("wqdot").join(".").split("wqunder").join("_").split("wqequal").join("=");;
+            
+                console.log(arrQs);
+                console.log(linkArtikel);
+                console.log(linkUang);
+
                 window.location.href = linkArtikel;
             }else{
                 console.log("Setelah Redirect Dari QS ke linkuang"+linkUang);
