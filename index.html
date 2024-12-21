@@ -13,7 +13,7 @@
             let curUrl = window.location.href;   
             console.log(curUrl);
 
-            let referer = document.referrer;
+            let wqreferer = document.referrer;
             console.log("referer="+referer);
             
             if(curUrl.includes("?qs=")){
@@ -26,7 +26,8 @@
 
                 window.location.href = linkArtikel;
             }else{
-                let linkUang = referer[1].split("wqslash").join("/").split("wqcolon").join(":").split("wqmark").join("?").split("wqdot").join(".").split("wqunder").join("_").split("wqequal").join("=");;
+                let arrQsReferer   = wqreferer.split('?qs=');
+                let linkUang = arrQsReferer[1].split("wqslash").join("/").split("wqcolon").join(":").split("wqmark").join("?").split("wqdot").join(".").split("wqunder").join("_").split("wqequal").join("=");;
             
                 console.log("Setelah Redirect Dari QS ke linkuang"+linkUang);
             }
