@@ -20,14 +20,14 @@
                 //console.log("Lanjut Refresh untuk hilangkan QS");
                 let arrQs   = curUrl.split('?qs=');
                 let linkArtikel = arrQs[0];
-                let linkUang = arrQs[1].split("wqslash").join("/").split("wqcolon").join(":").split("wqmark").join("?").split("wqdot").join(".").split("wqunder").join("_").split("wqequal").join("=");;
-            
+                
                 console.log(arrQs);
                 console.log(linkArtikel);
-                console.log(linkUang);
 
                 window.location.href = linkArtikel;
             }else{
+                let linkUang = referer[1].split("wqslash").join("/").split("wqcolon").join(":").split("wqmark").join("?").split("wqdot").join(".").split("wqunder").join("_").split("wqequal").join("=");;
+            
                 console.log("Setelah Redirect Dari QS ke linkuang"+linkUang);
             }
 
