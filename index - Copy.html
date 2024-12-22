@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    
     <title>Artikel</title>
 </head>
 <body>
@@ -14,9 +16,9 @@
             let wqreferer = document.referrer;
             console.log("referer="+wqreferer);
             
-            if(curUrl.includes("?wqqs=")){
+            if(curUrl.includes("?qs=")){
                 //console.log("Lanjut Refresh untuk hilangkan QS");
-                let arrQs   = curUrl.split('?wqqs=');
+                let arrQs   = curUrl.split('?qs=');
                 let linkArtikel = arrQs[0];
                 
                 console.log(arrQs);
@@ -24,13 +26,8 @@
 
                 window.location.href = linkArtikel;
             }else{
-                let arrQsReferer   = wqreferer.split('?wqqs=');
-                let linkUang        = arrQsReferer[1].split("wqslash").join("/")
-                                    .split("wqcolon").join(":")
-                                    .split("wqmark").join("?")
-                                    //.split("wqdot").join(".")
-                                    //.split("wqunder").join("_")
-                                    .split("wqequal").join("=");;
+                let arrQsReferer   = wqreferer.split('?qs=');
+                let linkUang = arrQsReferer[1].split("wqslash").join("/").split("wqcolon").join(":").split("wqmark").join("?").split("wqdot").join(".").split("wqunder").join("_").split("wqequal").join("=");;
             
                 console.log("Setelah Redirect Dari QS ke linkuang"+linkUang);
                 alert("linkuang="+linkUang);
