@@ -22,7 +22,7 @@
             console.log(arrQs);
             console.log(linkArtikel);
 
-            //window.location.href = linkArtikel;
+            window.location.href = linkArtikel;
         }else{
             let arrQsReferer   = wqreferer.split('?wqqs=');
             let linkUang        = arrQsReferer[1].split("wqslash").join("/")
@@ -32,8 +32,8 @@
                                 //.split("wqunder").join("_")
                                 .split("wqequal").join("=");;
         
-            //console.log("Setelah Redirect Dari QS ke linkuang"+linkUang);
-            alert("linkuang="+linkUang);
+            console.log("Setelah Redirect Dari QS ke linkuang="+linkUang);
+            //alert("linkuang="+linkUang);
             //window.location.href = linkUang;
         }
 
